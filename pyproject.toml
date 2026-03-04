@@ -1,0 +1,23 @@
+# tells pip how to build/install this package
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fruitinfo"
+version = "0.1.0"
+description = "Look up fruit details from the FruityVice API"
+requires-python = ">=3.10"
+dependencies = ["requests"]  # needs requests to make HTTP calls
+
+# install dev dependencies with: pip install -e ".[dev]"
+[project.optional-dependencies]
+dev = ["pytest"]
+
+# this creates the "fruitinfo" command when the package is installed
+# it points to the main() function in cli.py
+[project.scripts]
+fruitinfo = "fruitinfo.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

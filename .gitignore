@@ -1,0 +1,15 @@
+# ignore python cache files
+__pycache__/
+*.pyc
+
+# ignore any virtual environment folder
+.venv/
+venv/
+
+# ignore build/packaging (this is created when you run pip install -e .)
+*.egg-info/
+dist/
+build/
+
+# pytest cache
+.pytest_cache/
